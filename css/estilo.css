@@ -93,12 +93,31 @@ header {
 
 .titulo {
     position: absolute;
-    top: 50%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: var(--color-cuarto);
-    font-size: 68px;
+    color: #1a1a1a; /* Color más oscuro */
+    font-size: 120px; /* Tamaño de letra más grande */
+    font-weight: bold; /* Peso de letra más fuerte */
     text-align: center;
+    text-shadow: 0 0 10px rgba(127, 125, 125, 0.5); /* Efecto de sombra */
+    background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(0, 0, 0, 0.746)); /* Efecto de gradiente */
+    -webkit-background-clip: text;
+    background-clip: text; /* Agregamos la propiedad estándar */
+    -webkit-text-fill-color: transparent;
+    animation: titulo 2s ease-in-out infinite; /* Animación para el título */
+}
+
+@keyframes titulo {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
 
 /* Estilos para dispositivos móviles */
