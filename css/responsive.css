@@ -1,0 +1,33 @@
+/* Estilos para dispositivos móviles y tabletas */
+@media (max-width: 768px) {
+    header {
+    padding: 10px;
+    }
+    nav ul {
+    flex-direction: column;
+    }
+    nav li {
+    margin-right: 0;
+    }
+    section {
+    flex-direction: column;
+    }
+    button {
+    padding: 10px;
+    }
+   }
+   
+   @media (max-width: 480px) {
+    header {
+    padding: 5px;
+    }
+    nav a {
+    font-size: 14px;
+    }
+    section {
+    padding: 10px;
+    }
+    button {
+    padding: 5px;
+    }
+   }

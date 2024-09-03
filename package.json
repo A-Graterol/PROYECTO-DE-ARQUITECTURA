@@ -1,0 +1,16 @@
+{
+    "name": "pagina-web",
+    "version": "1.0.0",
+    "description": "Página web básica con HTML, CSS y JavaScript",
+    "main": "index.html",
+    "scripts": {
+        "start": "live-server"
+    },
+    "keywords": [],
+    "author": "Andres Graterol",
+    "license": "MIT",
+    "dependencies": {
+        "@fontsource/fugaz-one": "^5.0.20",
+        "live-server": "^1.2.0"
+    }
+}
