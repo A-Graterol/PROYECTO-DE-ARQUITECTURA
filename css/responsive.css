@@ -31,3 +31,38 @@
     padding: 5px;
     }
    }
+
+   @media (max-width: 768px) {
+    .tarjeta {
+      width: 100%;
+      height: auto;
+      margin: 20px 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .tarjeta {
+      padding: 10px;
+    }
+    .tarjeta .titulo-tarjeta {
+      font-size: 18px;
+    }
+    .tarjeta .descripcion-tarjeta {
+      font-size: 14px;
+    }
+  }
+
+  
+@keyframes titulo {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}

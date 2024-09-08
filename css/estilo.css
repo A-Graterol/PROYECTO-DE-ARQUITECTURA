@@ -1,24 +1,26 @@
 /* Estilos generales */
-
 :root {
     --color-principal: #02317e;
     --color-secundario: #ccc;
     --color-terciario: #f2f2f2;
     --color-cuarto: #240000;
+    --font-family: 'Fugaz One';
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    font-family: 'Fugaz One';
+    font-family: var(--font-family);
+    background-color: var(--color-terciario);
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
     margin: 0;
     padding: 0;
-    background-color: var(--color-terciario);
-}
-
-header {
-    background-color: var(--color-cuarto);
-    color: var(--color-terciario);
-    padding: 1em;
-    text-align: center;
 }
 
 .subtitulo {
@@ -26,7 +28,7 @@ header {
     font-weight: bold;
     margin-bottom: 10px;
     color: #fff;
-    /* Color del texto blanco para contrastar con el fondo */
+    text-align: center;
 }
 
 /* Estilos para la sección con fondo */
@@ -38,9 +40,10 @@ header {
     background-position: center;
     background-attachment: fixed;
     filter: opacity(0.8);
-    background-repeat: no-repeat;
-    /* Agregamos un filtro de opacidad para suavizar la imagen de fondo */
     transition: opacity 0.5s ease-in-out;
+    width: 100%;
+    max-width: 1920px; /* Ajusta el tamaño máximo de la imagen */
+    margin: 0 auto; /* Centra la imagen */
 }
 
 .fondo-2 {
@@ -51,109 +54,89 @@ header {
     background-position: center;
     background-attachment: fixed;
     filter: opacity(0.8);
-    background-repeat: no-repeat;
-    /* Agregamos un filtro de opacidad para suavizar la imagen de fondo */
+        /* Agrega estas propiedades para que el fondo no se corte */
+        width: 100%;
+        max-width: 1920px; /* Ajusta el tamaño máximo de la imagen */
+        margin: 0 auto; /* Centra la imagen */
 }
 
 .fondo-3 {
     position: relative;
-    height: 100vh;
     background-image: url('/img/proyecto7.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     filter: opacity(0.9);
-    background-repeat: no-repeat;
-    /* Agregamos un filtro de opacidad para suavizar la imagen de fondo */
+        /* Agrega estas propiedades para que el fondo no se corte */
+        width: 100%;
+        max-width: 1920px; /* Ajusta el tamaño máximo de la imagen */
+    margin: 0 auto; /* Centra la imagen */
 }
 
-
-.proyectos {
+.tarjeta {
+    width: 100%; /* Ajusta el tamaño de la tarjeta */
+    margin: 0; /* Elimina el margen */
+    padding: 20px; /* Agrega un padding para separar las tarjetas */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out; /* Añade un efecto de transición */
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    background-image: url('/img/proyecto7.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    border: none;
-    box-shadow: none;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Oculta cualquier contenido que sobresalga de la tarjeta */
 }
 
-.proyectos img {
-    width: 25%;
-    /* Reducimos el ancho de las imágenes */
-    height: 40%;
-    /* Establecemos un alto similar al ancho */
-    margin: 8px;
-    bottom: 10px;
-    padding-top: 20px;
-    border: none;
-    box-shadow: #333
+.tarjeta img {
+    width: 100%; /* Ajusta el tamaño de la imagen */
+    height: 170px; /* Ajusta el tamaño de la imagen */
+    object-fit: cover; /* Ajusta la imagen para que se vea completa */
+    border-radius: 10px 10px 0 0; /* Agrega un borde redondeado a la imagen */
+    transition: transform 0.3s ease-in-out; /* Añade un efecto de transición */
+  }
+.tarjeta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
+
+.tarjeta .titulo-tarjeta {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.proyectos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    min-height: 100vh;
+    overflow-y: auto;
+    /* Agrega esta propiedad para que el contenedor se ajuste al alto del contenido */
+    height: auto;
+    max-height: 100vh;
+}
+
 
 .titulo {
     position: absolute;
-    top: 25%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #1a1a1a;
-    /* Color más oscuro */
     font-size: 120px;
-    /* Tamaño de letra más grande */
     font-weight: bold;
-    /* Peso de letra más fuerte */
     text-align: center;
     text-shadow: 0 0 10px rgba(127, 125, 125, 0.5);
-    /* Efecto de sombra */
-    background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(0, 0, 0, 0.746));
-    /* Efecto de gradiente */
+    background: linear-gradient(to bottom, rgba(5, 5, 5, 0.76), rgba(195, 131, 4, 0.741));
+    /* Agrega un degradado de fondo para dar un efecto de capa */
     -webkit-background-clip: text;
     background-clip: text;
-    /* Agregamos la propiedad estándar */
     -webkit-text-fill-color: transparent;
     animation: titulo 2s ease-in-out infinite;
-    /* Animación para el título */
-}
-
-@keyframes titulo {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-    }
-
-    50% {
-        transform: translate(-50%, -50%) scale(1.1);
-    }
-
-    100% {
-        transform: translate(-50%, -50%) scale(1);
-    }
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-}
-
-nav li {
-    margin-right: 20px;
-}
-
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-nav a:hover {
-    color: #ccc;
 }
 
 .servicios {
@@ -175,86 +158,94 @@ nav a:hover {
     margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-    /* Agregar ancho del 100% para que la imagen ocupe todo el espacio */
     height: 100px;
-    /* Establecer un alto fijo para que la imagen se ajuste */
+    transition: transform 0.3s ease-in-out; /* Añade un efecto de transición */
 }
 
 .servicio span {
     font-size: 25px;
     font-weight: bold;
     color: var(--color-terciario);
-    /* Cambiar el color del texto a blanco para que resalte */
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    /* Agregar un efecto de sombra para que las letras se vean mejor */
+    transition: transform 0.3s ease-in-out; /* Añade un efecto de transición */
 }
 
 .servicio:hover {
     background-color: #e5e5e5;
-    /* Cambiar el fondo al hacer hover */
     transform: scale(1.1);
-    /* Aumentar el tamaño al hacer hover */
+    transition: transform 0.3s ease-in-out; /* Añade un efecto de transición */
 }
-
 section {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    /* Agrega esta propiedad para que el padding no afecte el ancho */
+    overflow: hidden;
 }
 
-h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-p {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-button:hover {
-    background-color: #444;
-}
-
-div {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
+.h2-fondo {
     font-size: 48px;
-    /* Tamaño de letra más grande */
     font-weight: bold;
-    /* Peso de letra más fuerte */
-    margin-bottom: 10px;
-    /* Espacio entre el título y el párrafo */
-    color: #000000;
-    /* Color del texto */
-}
-
-footer {
-    background-color: var(--color-principal);
-    color: #fff;
-    padding: 10px;
+    margin-bottom: 5px;
+    color: var(--color-principal);
+    /* Utiliza el color principal definido en :root */
     text-align: center;
-    clear: both;
+    background-image: url('/img/edificio2.jpg');
+    padding: 10px 10px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    transition: opacity 0.5s ease-in-out;
+    height: 150px;
+    
 }
 
-footer p {
-    font-size: 16px;
-    margin-bottom: 10px;
+.h2-fondo-2 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--color-principal);
+    /* Utiliza el color principal definido en :root */
+    text-align: center;
+    background-image: url('/img/proyecto7.png');
+    padding: 10px 10px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    transition: opacity 0.5s ease-in-out;
+    height: 150px;
+}
+
+.h2-proyectos,
+.h2-servicios {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--color-principal);
+    /* Utiliza el color principal definido en :root */
+    text-align: center;
+    opacity: 1.5;
+    /* Reduce la opacidad a 0.7 (puedes ajustar este valor según tus necesidades) */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    /* Agrega un efecto de sombra para dar profundidad */
+    padding: 20px 0;
+    /* Agrega un poco de espacio superior e inferior */
+    background: linear-gradient(to bottom, rgb(5, 5, 5), rgba(210, 141, 4, 0.974));
+    /* Agrega un degradado de fondo para dar un efecto de capa */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.h2-proyectos {
+    margin-top: 30px;
+    /* Agrega un poco de espacio superior para separar del contenido anterior */
+}
+
+.h2-servicios {
+    margin-top: 10px;
+    /* Agrega un poco de espacio superior para separar del contenido anterior */
 }
