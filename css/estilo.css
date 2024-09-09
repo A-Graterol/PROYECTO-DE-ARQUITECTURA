@@ -35,7 +35,7 @@ body {
 .fondo {
     position: relative;
     height: 100vh;
-    background-image: url('./img/edificio.jpg');
+    background-image: url('../img/edificio.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -49,7 +49,7 @@ body {
 .fondo-2 {
     position: relative;
     height: 100vh;
-    background-image: url('./img/edificio2.jpg');
+    background-image: url('../img/edificio2.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -62,14 +62,14 @@ body {
 
 .fondo-3 {
     position: relative;
-    background-image: url('./img/proyecto7.png');
+    background-image: url('../img/proyecto7.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     filter: opacity(0.9);
-        /* Agrega estas propiedades para que el fondo no se corte */
-        width: 100%;
-        max-width: 1920px; /* Ajusta el tamaño máximo de la imagen */
+    /* Agrega estas propiedades para que el fondo no se corte */
+    width: 100%;
+    max-width: 1920px; /* Ajusta el tamaño máximo de la imagen */
     margin: 0 auto; /* Centra la imagen */
 }
 
